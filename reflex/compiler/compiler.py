@@ -1241,6 +1241,8 @@ def compile_app(
             if page_file.is_file() and page_file not in keep_files:
                 page_file.unlink()
 
+    frontend_skeleton.update_entry_client()
+
     output_mapping: dict[Path, str] = {}
     for output_path, code in compile_results:
         path = utils.resolve_path_of_web_dir(output_path)
